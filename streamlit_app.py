@@ -34,10 +34,11 @@ if st.button("Send"):  # Aligned with if
         st.warning("Please enter a valid message!")
     else:  # Properly aligned
         try:  # Start of try block
-            response = requests.post(
-                "https://your-ngrok-url/chat",  # Replace with your ngrok URL
-                json={"message": user_input}
-            )
+           response = requests.post(
+    "https://730e-103-97-242-255.ngrok-free.app/chat",  # Updated with actual ngrok URL
+    json={"message": user_input}
+)
+
             if response.status_code == 200:  # This must align with the response above
                 bot_response = response.json().get("response", "No response received.")
                 st.markdown("### 🤖 Chatbot's Response:")
